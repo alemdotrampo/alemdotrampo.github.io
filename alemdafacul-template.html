@@ -1,0 +1,965 @@
+
+<!doctype html>
+<html class="no-js" lang="pt_BR">
+
+<head>
+    <meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"7cc7588d5d",applicationID:"236149562"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1167.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="csrf-token" content="vdxdXWGPohKjY3ps8fo0TCBDsVPRa5HgA3pY1010">
+<meta name="server" content="68.183.114.229">
+    <title>Além da Facul</title>
+
+<meta name="description" content="">    <link rel="stylesheet" href="/vendor/template-alemdafacul/css/main.css?id=abc7011d3e5bd5d5a3d3">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">        
+    
+    
+    
+    
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K66MPH7');</script>
+<!-- End Google Tag Manager --><script src="https://unpkg.com/ionicons@4.4.2/dist/ionicons.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i" rel="stylesheet" type="text/css">
+<link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+
+<link href="/vendor/template-default2/fonts/ionicons.ttf" rel="stylesheet" type="application/font-sfnt">
+
+<link href="/vendor/template-default2/fonts/fontawesome-webfont.ttf?v=4.7.0" rel="stylesheet" type="application/font-sfnt">
+<link href="/vendor/template-default2/fonts/fontawesome-webfont.woff?v=4.7.0" rel="stylesheet" type="application/font-woff">
+<link href="/vendor/template-default2/fonts/fontawesome-webfont.woff2?v=4.7.0" rel="stylesheet" type="application/octet-stream">
+<link rel="icon" type="image/png" href="https://netshowme-ott.s3.sa-east-1.amazonaws.com/sites/49/media/14026/alem-da-facul-logo.png" /><!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5ddc4c1843be710e1d1f0f9e/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+<link rel="canonical" href="https://alemdafacul.com.br/">
+    </head>
+
+<body id="page-default"
+    class="landingpage">
+    
+    <div class="wrapper">
+            
+
+    <main class="main ">
+            <style>
+        .img-fluid {
+    height:inherit;
+}
+
+.btn-outline-primary {
+    border-width: 2px;
+    font-weight: 700;
+    font-size: 1.125rem;
+    padding: 5px 20px;
+    color:#fff !important;
+}
+
+.btn-outline-primary:hover {
+    color: #000 !important;
+}
+
+h1, h2, h3, h4 {
+    font-family:Montserrat, sans-serif;
+    font-weight:700 !important;
+}
+
+h4{
+    color: #fff;
+}
+
+h1 {
+    letter-spacing:-.04em!important;
+}
+
+.feature .content {
+    font-family: inherit;
+}
+
+body.landingpage .bg-image-gradient-b {
+    background: -webkit-gradient(linear,left top,left bottom,from(transparent),transparent,to(#191923));
+    background:linear-gradient(180deg,transparent 0,transparent,#191923);
+}
+
+body.landingpage .bg-dark {
+     background: -webkit-gradient(linear,left top,left bottom,from(#000),to(#191923))!important;
+    background:linear-gradient(180deg,#000 0,#191923)!important
+}
+
+.bg-dark-2 {
+    background-color: #242323;
+}
+
+.bg-light {
+    background-color: #efefef;
+}
+
+.bg-light-2{
+    background-color:#e70d0c;
+}
+
+h3.h5 {
+    text-transform:none;
+    color: #fff;
+}
+
+.text-primary, body.landingpage .text-secondary, body.landingpage .text-warning, .feature .icon {
+    color:#ad2d2c!important;
+}
+
+body.landingpage .h4, body.landingpage h4 {
+    line-height: 1.35;
+    color: #fff;
+}
+
+body.landingpage .card {
+    -webkit-box-shadow: 0 4px 15px rgba(0,0,0,.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,.1);
+}
+
+body.landingpage .icon-box {
+    border: 1px solid rgba(255,255,255,.4);
+    font-size: 4rem;
+    line-height: 0;
+    border-radius: .25rem;
+    flex-shrink: 0;
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: .625rem;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+body.landingpage .icon-play {
+    border: 3px solid rgb(255,255,255);
+    font-size: 3.5rem;
+    line-height: 0;
+    border-radius: 5rem;
+    flex-shrink: 0;
+    width: 6rem;
+    height: 6rem;
+    margin-bottom: .625rem;
+    display: inline-flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    color: #ad2d2c;
+    background-color: rgba(0,0,0,.4);
+}
+
+.btn {
+    border-radius: 5rem;
+}
+
+body.landingpage .btn-cta, body.landingpage .flickity-prev-next-button {
+    color:#000;
+    background:#f4c92c;
+    border: 0;
+}
+
+body.landingpage .btn-cta:hover, body.landingpage .flickity-prev-next-button:hover {
+    color:#000;
+    background:#f4c92c;
+    border: 0;
+}
+
+body.landingpage .btn-cta:active {
+    color:#000;
+    background:#f4c92c;
+    border: 0;
+}
+
+body.landingpage .image-h-tn, body.landingpage .image-v-tn {
+    border-radius: 0;
+}
+
+body.landingpage .image-card {
+    border-radius: .5rem .5rem 0 0;
+}
+
+.w-140 {
+    width: 140px;
+}
+
+body.landingpage .card.testimonial {
+    margin-bottom: 1.5rem;
+    border: none;
+    border-radius: 0rem;
+    height:300px!important;
+}
+    
+#testimonials-11-slider li.dot {
+    display: none!important;
+}
+
+@media (max-width: 575px) {
+    body.landingpage h1 {
+        font-size: 2.5rem;
+    }
+    body.landingpage h2 {
+        font-size: 2rem;
+    }
+    body.landingpage h3 {
+        font-size: 1.5rem;
+    }
+}
+
+.lity {
+    z-index: 9990 !important;
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    white-space: nowrap !important;
+    background: rgba(0,0,0,.9) !important;
+    outline: none !important;
+    opacity: 0;
+    -webkit-transition: opacity .3s ease;
+    transition: opacity .5s ease !important;
+}
+
+.lity-wrap {
+    z-index: 9990 !important;
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    text-align: center !important;
+    outline: none!important;
+}
+
+.lity-close {
+    z-index: 9994 !important;
+    width: 35px;
+    height: 35px;
+    position: fixed !important;
+    right: 0 !important;
+    top: 0 !important;
+    -webkit-appearance: none;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    padding: 0;
+    color: #fff;
+    font-style: normal;
+    font-size: 35px;
+    font-family: Arial,Baskerville,monospace;
+    line-height: 35px;
+    text-shadow: 0 1px 2px rgba(0,0,0,.6);
+    border: 0;
+    background: none;
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+/*
+#carousel-482749b6-343d-4bf6-9d88-7c46c26962a3{ 
+    background: linear-gradient(0deg,#000 0,#191923)!important;
+}
+*/
+
+#carousel-482749b6-343d-4bf6-9d88-7c46c26962a3 h2, #carousel-482749b6-343d-4bf6-9d88-7c46c26962a3 h3, #carousel-482749b6-343d-4bf6-9d88-7c46c26962a3 h4 {
+    color: #fff;
+}
+    </style>
+            <section id="component-2cfe75f8-e717-460f-8902-54d0a8828975">
+            <header class="headers" id="headers-14">
+    <!--img src="https://netshowme-ott.s3.sa-east-1.amazonaws.com/sites/49/media/15735/bg-top-alemdafacul.jpg" alt=""
+        class="bg-image position-absolute"-->
+    <div class="container-fluid ph-20 ph-lg-50 ph-xl-80 zi-2">
+        <div class="pt-20 pt-sm-40">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-auto">
+                    <a href="#!">
+                        <img src="https://netshowme-ott.s3.sa-east-1.amazonaws.com/sites/49/media/24451/alem-da-facul-logo.png" alt="" class="h-80 h-sm-100">
+                    </a>
+                </div>
+                <div class="col-auto">
+                    <nav class="navbar">
+                        <a href="/acesse-sua-conta" class="btn btn-outline-primary">Entrar</a>
+                        <!--a href="/checkout/identifique-se" class="btn d-inline d-sm-none text-uppercase b-700 text-white">Assine</a-->
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="container text-center text-lg-left pt-40 pt-sm-80 pb-80 ph-0 zi-2">
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-10 col-lg-6">
+                    <h1 class="mb-20 text-white">O que não te ensinam na faculdade</h1>
+                    <p class="h4 mb-30 pr-xl-100 ph-md-100 ph-lg-0 text-white">
+                        As suas dúvidas sobre a estrada da vida simplificadas de um jeito direto ao ponto!
+                    </p>
+                    <a href="/checkout/identifique-se" class="btn btn-cta text-uppercase w-sm-full">Assine agora</a>
+                </div>
+                <div
+                    class="col-12 col-sm-10 col-lg-6 d-flex flex-column justify-content-center text-center pt-40 pt-lg-0">
+                    
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Fw8S2Bw2hqM" allowfullscreen=""></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container text-center text-lg-left pb-10 ph-0">
+            <!--hr class="bg-white op-2"-->
+            <div class="justify-content-center pt-30">
+                <div class="row text-left text-white">
+                    <div class="col-12 col-md-4 d-flex mb-20">
+                        <div class="mr-25">
+                            <div class="icon icon-box">
+                                <i class="ion-ios-unlocked-outline"></i>
+                            </div>
+                        </div>
+                        <div class="pr-20 h5">
+                            <div class="b-700 text-uppercase">Acesso a conteúdos exclusivos</div>
+                            <p class="op-7 smaller">Conteúdos especiais formados por toda a comunidade além da facul</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 d-flex mb-20">
+                        <div class="mr-25">
+                            <div class="icon icon-box">
+                                <i class="ion-ios-home-outline"></i>
+                            </div>
+                        </div>
+                        <div class="pr-20 h5">
+                            <div class="b-700 text-uppercase">Artigos, vídeos, podcasts, dúvidas e chat</div>
+                            <p class="op-7 smaller">Acesso ilimitado a todo conteúdo onde e quando quiser</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 d-flex mb-20">
+                        <div class="mr-25">
+                            <div class="icon icon-box">
+                                <i class="ion-ios-minus-outline"></i>
+                            </div>
+                        </div>
+                        <div class="pr-20 h5">
+                            <div class="b-700 text-uppercase">Cancele quando quiser</div>
+                            <p class="op-7 smaller">Fique tranquilo é fácil e sem custo adicional</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        </section>
+            <section id="component-0eacba0c-45d4-4e34-b15d-e18bc9e0c8b8">
+            <section class="sliders text-center ph-20 ph-lg-50 ph-xl-80 pt-80" id="sliders-8">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-10 col-md-8 col-xl-6 pb-20 pb-xl-30">
+        <h2 class="text-white">Em que etapa da sua Estrada da Vida você está?</h2>
+        <p class="h4 ph-md-50 ph-xl-80">O que você sempre quis saber, mas não tinha ninguém para perguntar</p>
+      </div>
+    </div>
+  </div>
+  <div class="container ph-0">
+<div class="row justify-content-center ph-10">
+     <img src="https://netshowme-ott.s3.sa-east-1.amazonaws.com/sites/49/media/24427/estrada-da-vida.png" class="img-fluid d-none d-lg-inline">
+     <div class="image-v-tn d-block d-lg-none" style="background-image: url(https://netshowme-ott.s3.sa-east-1.amazonaws.com/sites/49/media/24774/estrada-da-vida-mobile.png)"></div>
+</div>
+
+<div class="row pt-80">
+            <div class="col-12 col-sm-6 col-lg-4 mb-60 pr-sm-40">
+                    <div class="content text-left">
+                        <h4 class="text-white">1. Escolha de Profissão</h4>
+                        <p class="text-white">
+                            - Como escolher minha carreira<br> 
+                            - Como é o dia-a-dia e projeção da carreira escolhida?<br> 
+                            - Quebrando mitos para te tranquilizar sobre o futuro<br> 
+                            - Perguntas e respostas no quadro Direto ao Ponto para buscar conhecimento com quem já vivenciou o que você procura<br>
+                        </p>
+                    </div>
+            </div>
+            
+            <div class="col-12 col-sm-6 col-lg-4 mb-60">
+                <div class="content text-left">
+                        <h4 class="text-white">2. Escolha da Faculdade</h4>
+                        <p class="text-white">- Como escolher a faculdade que seja mais indicada para o seu perfil?<br>
+                            - O que é ensinado no seu curso dos sonhos?<br>
+                            - Quebrando mitos para te tranquilizar sobre os próximos passos para uma graduação<br>
+                            - Perguntas e respostas no quadro Direto ao Ponto<br>
+                            - From inside outs<br>
+                            - Dicas para se preparar para seu próximo passo<br>
+                            - Nosso ranking das melhores instituições do país</p>
+                    </div>
+            </div>
+            
+            <div class="col-12 col-sm-6 col-lg-4 mb-60">
+                <div class="content text-left">
+                        <h4 class="text-white">3. Decisão de Carreira</h4>
+                        <p class="text-white">-Dicas importante de preparação e comportamento para você buscar o emprego dos sonhos<br>
+                            - Conteúdo sobre os principais programas de trainee e estágio do país<br>
+                            - Série exclusiva “um dia na vida de...”<br>
+                            - Perguntas e respostas no quadro Direto ao Ponto</p>
+                    </div>
+            </div>
+            
+            <div class="col-12 col-sm-6 col-lg-4 mb-60">
+                <div class="content text-left">
+                        <h4 class="text-white">4. Educação Continuada</h4>
+                        <p class="text-white">- Porque fazer um curso extra?<br>
+                            - Quais são os principais tipos e quais são as finalidades de cada um?<br>
+                            - Quais são os principais certificados para o mercado financeiro e como se preparar?<br>
+                            - Rankings atualizados das melhores instituições de pós graduação do país<br>
+                            - Perguntas e respostas no quadro Direto ao Ponto</p>
+                    </div>
+            </div>
+            
+            <div class="col-12 col-sm-6 col-lg-4 mb-60">
+                <div class="content text-left">
+                        <h4 class="text-white">5. Empreendedorismo</h4>
+                        <p class="text-white">- Descomplicando o manual do empreendedor<br>
+                            - Entrevistas com quem poderá te dar grandes aprendizados<br>
+                            - Nossos bate papos ricos e descontraídos<br>
+                            - O Dia de Empreendedorismo na íntegra<br>
+                            - Nossas dicas de quem empreende há mais de 20 anos<br>
+                            - Suas dúvidas complicadas, respondidas de um jeito simples
+                            </p>
+                    </div>
+            </div>
+            
+            <div class="col-12 col-sm-6 col-lg-4 mb-60">
+                <div class="content text-left">
+                        <h4 class="text-white">6. Experiência Internacional</h4>
+                        <p class="text-white">- Quando fazer um intercâmbio?<br>
+                            - Quais os principais tipos que existem?<br>
+                            - From inside out internacional<br>
+                            - Ofertas exclusivas de programas<br>
+                            - Como se preparar para passar um tempo fora?<br>
+                            - Cuidados durante o programa<br>
+                            - Perguntas e respostas no quadro </p>
+                </div>
+            </div>
+            
+            <div class="col-12 col-sm-6 col-lg-4 mb-60">
+                <div class="content text-left">
+                        <h4 class="text-white">7. Soft Skills</h4>
+                        <p class="text-white">- Uma atenção especial, para habilidades fundamentais<br>
+                            - Entenda e desmistifique a importância das Soft Skills<br>
+                            - Conceitos explicados que irão transformar o seu dia-a-dia<br>
+                            - Conversas com quem realmente entende do assunto<br>
+                        </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+        </section>
+            <section id="component-f6462a48-61cd-4aaa-833f-e01fb233ed3a">
+            <img src="https://netshowme-ott.s3.sa-east-1.amazonaws.com/sites/49/media/15738/Prancheta%20%E2%80%93%201.png" alt="" class="bg-image position-absolute d-none d-xl-inline-block" style="top:250px;height:44%">
+    <div class="container-fluid ph-20 ph-lg-50 ph-xl-80 headers mb--7 pt-80 pb-120 p-xl-100">
+        <!--img src="https://netshowme-ott.s3.sa-east-1.amazonaws.com/sites/49/media/15736/img-sliders3.jpg" alt="" class="bg-image position-absolute"-->
+        <div class="container ph-0">
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-10 col-md-8 text-center pb-40">
+                  <h2 class="text-white">A inovação da educação</h2>
+                    <p class="h4 ph-md-50 ph-xl-10 text-white">O Além da Facul veio para te trazer informações diretas e transformadoras.
+                    Vamos juntos formar a maior comunidade empreendedora do Brasil.</p>
+                </div>
+            </div>
+         </div>
+    </div>
+    <div class="container-fluid ph-20 ph-lg-50 ph-xl-80 pb-40">
+        <div class="container ph-0">
+            <div class="card rounded-0">
+                <div class="slider no-gutters" id="sliders-3-slider">
+                    <div class="slider-item">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-lg-6 p-40 p-lg-80 ph-40 ph-md-80 ph-xl-100 text-lg-left order-2 order-lg-1">
+                                <h3>O que é o Além da Facul?</h3>
+                                <p>
+                                    Desde o final de 2018, o Além da Facul transmite conhecimento e incentiva o empreendedorismo entre o público jovem. É uma marca que busca ser referência e se tornar um símbolo de fomento e de engajamento de uma sociedade empreendedora.<br><br>
+                                    A partir da vontade de um dos nossos integrantes, o Além da Facul começou com o propósito de incentivar o empreendedorismo entre o público mais jovem.<br><br>
+                                    Isso foi possível gaças à atenção especial que damos a cada um em nossas redes sociais, entregando a informação isenta e imparcial.<br>
+                                </p>
+                            </div>
+                            <div class="col-lg-6 d-flex flex-column justify-content-center order-1 order-lg-2">
+                                <div class="h-100">
+                                    <img src="https://netshowme-ott.s3.sa-east-1.amazonaws.com/sites/49/media/15737/img-qf.jpg" alt="" class="bg-image image-video h-md-inherit">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6 text-center pb-40 pt-80 pt-lg-120">
+                <h2 class="h2 text-white">Conteúdo exclusivo para o assinante Além da Facul</h2>
+                <p class="h4 ph-md-50 ph-xl-10 text-white">Ao assinar o Além da Facul você terá acesso ilimitado à tudo isso!
+                </p>
+            </div>
+        </div>
+        <div class="row mb-20">
+            <div class="col-12 col-sm-6 col-lg-4 mb-40">
+                <div class="feature">
+                    <div class="icon">
+                        <i class="ion-ios-chatboxes-outline"></i>
+                    </div>
+                    <div class="content ph-md-20 ph-xl-40">
+                        <h4 class="h3 text-white">Chat da comunidade<br>Além da Facul</h4>
+                        <p class="text-white">Para buscar conhecimento com quem já vivenciou o que você procura</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 mb-40">
+                <div class="feature">
+                    <div class="icon">
+                        <i class="ion-ios-book-outline"></i>
+                    </div>
+                    <div class="content ph-md-20 ph-xl-40">
+                        <h4 class="h3 text-white">Artigos diretos<br>sobre temas não tão diretos</h4>
+                        <p class="text-white">Conhecimento de forma simples</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 mb-40">
+                <div class="feature">
+                    <div class="icon">
+                        <i class="ion-ios-film-outline"></i>
+                    </div>
+                    <div class="content ph-md-20 ph-xl-40">
+                        <h4 class="h3 text-white">Vídeos<br>essenciais</h4>
+                        <p class="text-white">Para você assistir e ter um conhecimento além</p>
+                    </div>
+                </div>
+            </div>
+             <div class="col-12 col-sm-6 col-lg-4 mb-40">
+                <div class="feature">
+                    <div class="icon">
+                        <i class="ion-ios-help-outline"></i>
+                    </div>
+                    <div class="content ph-md-20 ph-xl-40">
+                        <h4 class="h3 text-white">101</h4>
+                        <p class="text-white">Perguntas e respostas</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 mb-40">
+                <div class="feature">
+                    <div class="icon">
+                        <i class="ion-ios-mic-outline"></i>
+                    </div>
+                    <div class="content ph-md-20 ph-xl-40">
+                        <h4 class="h3 text-white">Podcasts</h4>
+                        <p class="text-white">Entrevistas e trechos direto ao ponto</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-4 mb-40">
+                <div class="feature">
+                    <div class="icon">
+                        <i class="ion-ios-star-outline"></i>
+                    </div>
+                    <div class="content ph-md-20 ph-xl-40">
+                        <h4 class="h3 text-white">Especiais</h4>
+                        <p class="text-white">Recomendações de cursos e descontos especiais para assinantes</p>
+                    </div>
+                </div>
+            </div>
+          
+          
+        </div>
+        <div class="ml-20 mr-20">
+            <div class="text-center mb-lg-40">
+                <a href="/checkout/identifique-se" class="btn btn-cta text-uppercase w-sm-full">
+                    Assine Agora
+                </a>
+            </div>
+        </div>
+    </div>
+        </section>
+            <section id="component-a3a31692-73b1-4c92-91de-d42a09c5ca15">
+            <section class="call-to-actions text-center bg-white" id="call-to-actions-9">
+<div class="container-fluid ph-20 ph-lg-40 ph-xl-80">
+    <div class="container ph-0">
+      <div class="row justify-content-center p-80">
+        <div class="col-12 col-lg-6 pb-10 pb-xl-10">
+				<h4 class="text-center text-uppercase text-dark">
+                    Nossos parceiros
+				</h4>
+			</div><div class="justify-content-center">
+				<div class="row justify-content-center text-white">
+					<div class="col-6 col-md-4 col-lg-2 d-flex feature">
+						<img src="https://netshowme-ott.s3.sa-east-1.amazonaws.com/sites/64/media/23404/logo-daquiprafrente.jpg" alt="Beck" class="w-100">
+					</div>
+                    <div class="col-6 col-md-4 col-lg-2 d-flex feature">
+						<img src="https://netshowme-ott.s3.sa-east-1.amazonaws.com/sites/64/media/23409/logo-sante.jpg" alt="Integral Coaching Ganada" class="w-100">
+					</div>
+                    <div class="col-6 col-md-4 col-lg-2 d-flex feature">
+						<img src="https://netshowme-ott.s3.sa-east-1.amazonaws.com/sites/64/media/23406/logo-fia-jr.jpg" alt="Integral Coaching Ganada" class="w-100">
+					</div>
+                    <div class="col-6 col-md-4 col-lg-2 d-flex feature">
+						<img src="https://netshowme-ott.s3.sa-east-1.amazonaws.com/sites/64/media/23405/logo-fia-finance.jpg" alt="Integral Coaching Ganada" class="w-100">
+					</div>
+                    <div class="col-6 col-md-4 col-lg-2 d-flex feature">
+						<img src="https://netshowme-ott.s3.sa-east-1.amazonaws.com/sites/64/media/23407/logo-gasper-insper.jpg" alt="Integral Coaching Ganada" class="w-100">
+					</div>
+                    <div class="col-6 col-md-4 col-lg-2 d-flex feature">
+						<img src="https://netshowme-ott.s3.sa-east-1.amazonaws.com/sites/64/media/23408/logo-liga-insper.jpg" alt="Integral Coaching Ganada" class="w-100">
+					</div>
+				</div>
+			</div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+        </section>
+            <section id="component-9eea5315-351f-4b82-8c89-947566f42cba">
+            <section class="contents text-center p-60 p-lg-100 bg-black" id="contents-10">
+    <img src="https://netshowme-ott.s3.sa-east-1.amazonaws.com/sites/49/media/24642/bg-bottom.jpg" alt=""
+        class="bg-image position-absolute">
+    <div class="container-fluid ph-20 ph-lg-50 ph-xl-80">
+        <div class="container ph-0">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="bg-white p-60 p-lg-70 ph-30 ph-sm-60 ph-lg-60">
+                        <h3 class="text-black contents-title">Acessível de qualquer dispositivo</h3>
+                        <p class="text-gray-light contents-text">
+                            Ao ser assinante Além da Facul você receberá um feed individual, que permitirá que você receba os conteúdos direto em seu smartphone, tablet ou computador, sem precisar baixar arquivos ou acessar a página.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        </section>
+            <section id="component-f6d7e22f-589f-47f2-b9f9-8ad7f6fcaf4e">
+            <section class="testimonials text-center p-60 p-lg-100" id="testimonials-11">
+
+  <div class="container-fluid ph-20 ph-lg-50 ph-xl-80">
+    <div class="container ph-0">
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-md-8 col-xl-6 col-xxl-6 pb-40">
+          <h3 class="text-white">O que falam nossos assinantes</h3>
+        </div>
+      </div>
+      <div class="row slider carousel-d" id="testimonials-11-slider">
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3 slider-item">
+          <div class="card testimonial">
+            
+            <div class="pt-15 pb-30 ph-20">
+              <p class="h5 pb-30 pt-20">
+                Vai levar um tempinho, mas eu vou chegar lá e conquistar o meu sonho. Agradeço demais a cada um de vocês! Continuem esse trabalho incrível, ajudando muitas pessoas, assim como estão me ajudando!<br><br>
+                <b>Alan</b><br>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3 slider-item">
+          <div class="card testimonial">
+            
+            <div class="pt-15 pb-30 ph-20">
+              <p class="h5 pb-30 pt-20">
+                A vontade de empreender sempre existiu, o que faltava era o Start. Quando decidi dar o ponta pé inicial, surgiu o curso, então optei por pegar essa bagagem e aplicar no meu caso.<br><br>
+                <b>Caio</b><br>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3 slider-item">
+          <div class="card testimonial">
+            <div class="pt-15 pb-30 ph-20">
+              <p class="h5 pb-30 pt-20">
+                Me motivar e aprender com alguém que já empreende. Através do Instagram já peguei alguns mindsets que pude colocar em prática e, como sou novo, tenho a oportunidade de adquirir conhecimento mais profundo sobre algo que pretendo entrar de cabeça.<br><br>
+                <b>Renan</b><br>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3 slider-item">
+          <div class="card testimonial">
+            <div class="pt-15 pb-30 ph-20">
+              <p class="h5 pb-30 pt-20">
+                Olá! Ontem fui contratado para vaga de Analista Financeiro pela XXXXX. Muito dessa conquista se deve ao conteúdo transformador que vocês estão entregando no curso de Mercado Financeiro, Análise de CV e até no Vô Vicente! Muito obrigado gente! Para mim, vocês são os melhores no que fazem! Muito bom dia!<br><br>
+                <b>Phablo</b><br>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+        </section>
+            <section id="component-70b74459-903b-46ae-9c88-38e4e795c4db">
+            <section class="call-to-actions text-center bg-black" id="call-to-actions-9">
+  <img src="https://netshowme-ott.s3.sa-east-1.amazonaws.com/sites/49/media/15753/bg-rodape.jpg"
+    alt="" class="bg-image position-absolute">
+  <div class="container-fluid ph-20 ph-lg-50 ph-xl-80 zi-2">
+    <div class="container ph-0">
+      <div class="row justify-content-center p-100">
+        <div class="col-12 col-lg-8 col-xl-6 col-offset-xl-2 text-center text-lg-left">
+          <h3 class="text-white">Não seja atropelado pela mudança</h3>
+          <p class="h4 text-white mb-40 mb-lg-0 ph-sm-100 pl-lg-0 op-9">
+            Aproveite nosso valor promocional de lançamento!<br>
+            <b>Assine agora por apenas <u>R$ 29,90</u> mensais.</b>
+          </p>
+        </div>
+        <div class="col-12 col-lg-4 d-flex flex-column justify-content-center">
+          <div>
+            <a href="/checkout/identifique-se" class="btn btn-cta text-uppercase w-sm-full">
+              Assine agora
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+        </section>
+            <section id="component-450226eb-0611-4836-8dde-a3b3215026fd">
+            <section class="footers text-center text-sm-left" id="footers-11">
+  <div class="container-fluid ph-20 ph-lg-50 ph-xl-80 p-20">
+    <div class="container ph-0">
+      <div class="row justify-content-between align-items-center">
+        <div class="col-12 col-lg-auto mb-20 mb-lg-0">
+          <div class="row justify-content-center align-items-center ph-10">
+            <div class="mb-sm-0 h6 text-white">
+              © Copyright 2019.
+              <span class="ml-10"><a href="/termos-de-uso" class="b-700 text-white">Termos de Uso</a></span>
+              <span class="ml-10"><a href="/politica-de-privacidade" class="b-700 text-white">Política de Privacidade</a></span>
+              <span class="ml-10"><a href="/faq" class="b-700 text-white">Perguntas Frequentes</a></span>
+              <span class="ml-10"><a href="/fale-conosco" class="b-700 text-white">Fale Conosco</a></span>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-auto">
+          <div class="row justify-content-center align-items-center ph-10">
+            <div class="mb-sm-0 h6 text-white">
+              Plataforma: <a href="https://netshow.me/" target="_blank" class="b-700 text-white">Netshow.me OTT</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+        </section>
+        </main>
+
+    <div class="modal modal-login fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title box-title text-center">Acesse sua <span class="highlight">conta</span></h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="ion-close"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <form method="POST" action="https://alemdafacul.com.br/acesse-sua-conta" accept-charset="UTF-8" class="form form-login"><input name="_token" type="hidden" value="vdxdXWGPohKjY3ps8fo0TCBDsVPRa5HgA3pY1010">
+                    <div class="form-group ">
+                        <div class="input-group">
+                            <input class="form-control " placeholder="E-mail" name="email" type="email">
+                            <span class="input-group-addon"><i class="ion-email"></i></span>
+                        </div>
+                        
+                    </div>
+                    <div class="form-group ">
+                        <div class="input-group">
+                            <input autocomplete="off" class="form-control " placeholder="Senha" name="password" type="password" value="">
+                            <span class="input-group-addon"><i class="ion-locked"></i></span>
+                        </div>
+                        
+                    </div>
+                    <div class="form-group text-right">
+                        <a href="https://alemdafacul.com.br/resgatar-senha">Esqueci minha senha</a>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-block text-uppercase">
+                            Entrar
+                        </button>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" name="remember" type="checkbox" value="1">
+                            Manter conectado
+                        </label>
+                    </div>
+                    <hr />
+                    <p class="text-center">
+                        Ainda não tem cadastro?
+                    </p>
+                    <div class="form-group text-right">
+                        <a href="https://alemdafacul.com.br/assine" class="btn btn-secondary btn-block text-uppercase">Assine agora</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>    </div>
+
+        <script src="/vendor/template-alemdafacul/js/main.js?id=9e42c7ea2b0dcdf1e59f"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.0.8/flickity.pkgd.min.js"></script>
+    <script src="https://unpkg.com/ionicons@4.4.2/dist/ionicons.js"></script>
+    <script>
+        $(function () {
+
+            $(".content-carousel").flickity({
+                cellSelector: ".slider-item",
+                resize: true,
+                cellAlign: 'left',
+                contain: true,
+                imagesLoaded: false,
+                wrapAround: false,
+                adaptiveHeight: true,
+                pageDots: true,
+                prevNextButtons: true
+            });
+
+            jQuery(document).ready(function ($) {
+                $('.image-h-tn').each(function () {
+                    $('.carousel-h>.flickity-prev-next-button').css({
+                        'top': ($('.image-h-tn').outerHeight() / 2) + 'px'
+                    });
+                });
+            });
+
+            $('.nav-link').click(function( event ) {
+                setTimeout(() => {
+                    window.dispatchEvent(new Event('resize'));
+                }, 200)
+            });
+
+            $('.form-leads').on('submit', function (e) {
+                e.preventDefault();
+
+                var $form = $(this);
+                $button = $form.find('button[type="submit"]');
+
+                $button.prop('disabled', true);
+
+                axios.post($form.attr('action'), $form.serialize()).then(function (response) {
+                    new Noty({
+                        text: 'Seus dados foram enviados com sucesso!',
+                        timeout: 10000,
+                        type: 'success'
+                    }).show();
+
+                    $form.find('input[type=text], input[type=email], input[type=tel]').val('');
+
+                    $button.prop('disabled', false);
+
+                }).catch(function (error) {
+                    if (error.response.data.errors) {
+                        messages = error.response.data.errors;
+
+                        Object.keys(messages).forEach((key) => {
+                            for (var i = 0; i < messages[key].length; i++) {
+                                new Noty({
+                                    text: messages[key][i],
+                                    type: 'error'
+                                }).show();
+                            }
+                        });
+                    } else {
+                        new Noty({
+                            text: 'Não foi possível enviar seus dados. Por favor, tente novamente.',
+                            type: 'error'
+                        }).show();
+                    }
+
+                    $button.prop('disabled', false);
+                });
+            });
+        });
+    </script>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.0.8/flickity.pkgd.min.js"></script>
+<script>
+    $("#content-carousel-1").flickity({
+        cellSelector: ".slider-item",
+        resize: true,
+        cellAlign: 'left',
+        contain: true,
+        imagesLoaded: true,
+        wrapAround: true,
+        adaptiveHeight: false,
+        pageDots: true,
+        groupCells: true,
+        prevNextButtons: true
+    });
+    jQuery(document).ready(function ($) {
+        $('.image-v-tn').each(function () {
+            $('.carousel-v>.flickity-prev-next-button').css({
+                'top': ($('.image-v-tn').outerHeight() / 2) + 'px'
+            });
+        });
+    });
+    $("#content-carousel-2").flickity({
+        cellSelector: ".slider-item",
+        resize: true,
+        cellAlign: 'left',
+        contain: true,
+        imagesLoaded: true,
+        wrapAround: true,
+        adaptiveHeight: false,
+        pageDots: true,
+        groupCells: true,
+        prevNextButtons: true
+    });
+    jQuery(document).ready(function ($) {
+        $('.image-h-tn').each(function () {
+            $('.carousel-h>.flickity-prev-next-button').css({
+                'top': ($('.image-h-tn').outerHeight() / 2) + 'px'
+            });
+        });
+    });
+    $('#testimonials-11-slider').flickity({
+        cellAlign: 'left',
+        contain: true,
+        groupCells: true,
+        wrapAround: true,
+        adaptiveHeight: false,
+        pageDots: true,
+        prevNextButtons: false
+    });
+</script>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.3.1/lity.min.css" rel="stylesheet"><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K66MPH7"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    
+        <script>
+  const activeItem = document.querySelector('.playlist-item.active');
+
+  if (activeItem) {
+    activeItem.scrollIntoView({
+        block: 'nearest'
+    });
+  }
+</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"7cc7588d5d","applicationID":"236149562","transactionName":"Z1BQZUtSChdQVBULWV4ac1JNWgsKHlETDVhEUFxVF1cBAlBCDRYYWVtWVEE=","queueTime":0,"applicationTime":127,"atts":"SxdTEwNIGRk=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+
+</html>
