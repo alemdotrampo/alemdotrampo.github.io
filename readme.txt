@@ -1,8 +1,5 @@
-Thank you for using our template!
+<h1>Seja bem vindo(a) ao site do Além do Trampo!</h1>
 
-For more awesome templates please visit https://colorlib.com/wp/templates/
+<b>Aqui você vai encontrar ferramentas para decolar sua carreira</b>
 
-Copyright information for the template can't be altered/removed unless you purchase a license.
-More information about the license is available here: https://colorlib.com/wp/licence/
-
-Removing copyright information without the license will result in suspension of your hosting and/or domain name(s).
+Template: https://colorlib.com/wp/templates/
